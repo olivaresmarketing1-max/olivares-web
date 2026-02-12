@@ -125,271 +125,112 @@ export default function ContactTabs() {
   };
 
   return (
-    <div className="bg-white rounded-3xl shadow-2xl overflow-hidden max-w-5xl mx-auto border border-gray-100">
+    <div className="bg-white rounded-2xl md:rounded-3xl shadow-2xl overflow-hidden max-w-5xl mx-auto border border-gray-100">
+      {/* TABS HEADER */}
       <div className="flex border-b border-gray-200">
         <button
           type="button"
           onClick={() => setActiveTab("formulario")}
-          className={`w-1/2 py-6 text-center font-bold text-lg transition duration-300 border-b-4 flex items-center justify-center gap-2 ${
+          className={`w-1/2 py-4 md:py-6 text-center font-bold text-sm md:text-lg transition duration-300 border-b-4 flex flex-col md:flex-row items-center justify-center gap-1 md:gap-2 ${
             activeTab === "formulario"
-              ? "border-brand-primary bg-white text-brand-primary hover:bg-gray-50"
-              : "border-transparent bg-gray-50 text-gray-400 hover:text-brand-dark hover:bg-gray-100"
+              ? "border-brand-primary bg-white text-brand-primary"
+              : "border-transparent bg-gray-50 text-gray-400 hover:text-brand-dark"
           }`}
         >
-          <FaEnvelopeOpenText /> Escríbenos / Cotizar
+          <FaEnvelopeOpenText className="text-lg md:text-xl" /> 
+          <span className="leading-tight">Cotizar</span>
         </button>
         <button
           type="button"
           onClick={() => setActiveTab("ubicacion")}
-          className={`w-1/2 py-6 text-center font-bold text-lg transition duration-300 border-b-4 flex items-center justify-center gap-2 ${
+          className={`w-1/2 py-4 md:py-6 text-center font-bold text-sm md:text-lg transition duration-300 border-b-4 flex flex-col md:flex-row items-center justify-center gap-1 md:gap-2 ${
             activeTab === "ubicacion"
-              ? "border-brand-primary bg-white text-brand-primary hover:bg-gray-50"
-              : "border-transparent bg-gray-50 text-gray-400 hover:text-brand-dark hover:bg-gray-100"
+              ? "border-brand-primary bg-white text-brand-primary"
+              : "border-transparent bg-gray-50 text-gray-400 hover:text-brand-dark"
           }`}
         >
-          <FaMapLocationDot /> Ubicación y Horarios
+          <FaMapLocationDot className="text-lg md:text-xl" /> 
+          <span className="leading-tight">Ubicación</span>
         </button>
       </div>
 
-      <div
-        id="formulario"
-        className={`tab-content p-8 md:p-12 ${activeTab === "formulario" ? "active" : ""}`}
-      >
+      {/* CONTENIDO FORMULARIO */}
+      <div className={`p-6 md:p-12 ${activeTab === "formulario" ? "block" : "hidden"}`}>
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-brand-dark mb-3">
-              Envíanos tu Consulta
-            </h3>
-            <p className="text-brand-grey">
-              Completa el formulario y te contactaremos a la brevedad
-            </p>
+            <h3 className="text-2xl md:text-3xl font-bold text-brand-dark mb-2">Envíanos tu Consulta</h3>
+            <p className="text-brand-grey text-sm md:text-base">Completa los datos y te contactaremos pronto</p>
           </div>
-          <form
-            id="contactFormPage"
-            onSubmit={handleSubmitWhatsApp}
-            className="space-y-5"
-          >
-            <div>
-              <label
-                htmlFor="nombrePage"
-                className="block text-sm font-bold text-brand-dark mb-2"
-              >
-                Nombre y Apellido *
-              </label>
-              <input
-                type="text"
-                id="nombrePage"
-                required
-                className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brand-primary focus:bg-white outline-none transition"
-                placeholder="Tu nombre completo"
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="celularPage"
-                className="block text-sm font-bold text-brand-dark mb-2"
-              >
-                Celular *
-              </label>
-              <input
-                type="tel"
-                id="celularPage"
-                required
-                className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brand-primary focus:bg-white outline-none transition"
-                placeholder="999 888 777"
-              />
-            </div>
-            <div className="bg-brand-accent-yellow/10 p-4 rounded-lg border border-brand-accent-yellow/30">
-              <label
-                htmlFor="productoPage"
-                className="block text-sm font-bold text-brand-dark mb-2"
-              >
-                <FaBoxOpen className="text-brand-accent-orange mr-1 inline" />{" "}
-                Producto de Interés *
-              </label>
-              <input
-                type="text"
-                id="productoPage"
-                required
-                className="w-full px-4 py-3 rounded-lg bg-white border border-gray-200 focus:border-brand-accent-orange outline-none transition placeholder-gray-400"
-                placeholder="Ej: Cemento Sol, Taladro Bosch, Tuberías..."
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="mensajePage"
-                className="block text-sm font-bold text-brand-dark mb-2"
-              >
-                Mensaje Adicional
-              </label>
-              <textarea
-                id="mensajePage"
-                rows={3}
-                className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brand-primary focus:bg-white outline-none transition resize-none"
-                placeholder="Cantidad, lugar de entrega, etc..."
-              />
-            </div>
+          <form id="contactFormPage" onSubmit={handleSubmitWhatsApp} className="space-y-4 md:space-y-5">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <button
-                type="submit"
-                className="bg-[#25D366] hover:bg-[#20BA5A] text-white font-bold py-4 rounded-lg transition shadow-xl flex items-center justify-center gap-2 transform active:scale-95"
-              >
-                <FaWhatsapp className="text-xl" /> Enviar por WhatsApp
+              <div>
+                <label htmlFor="nombrePage" className="block text-xs md:text-sm font-bold text-brand-dark mb-2">Nombre y Apellido *</label>
+                <input type="text" id="nombrePage" required className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brand-primary outline-none text-sm md:text-base" placeholder="Tu nombre" />
+              </div>
+              <div>
+                <label htmlFor="celularPage" className="block text-xs md:text-sm font-bold text-brand-dark mb-2">Celular *</label>
+                <input type="tel" id="celularPage" required className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brand-primary outline-none text-sm md:text-base" placeholder="999 888 777" />
+              </div>
+            </div>
+            <div className="bg-brand-accent-yellow/5 p-4 rounded-lg border border-brand-accent-yellow/20">
+              <label htmlFor="productoPage" className="block text-xs md:text-sm font-bold text-brand-dark mb-2">
+                <FaBoxOpen className="text-brand-accent-orange mr-1 inline" /> Producto de Interés *
+              </label>
+              <input type="text" id="productoPage" required className="w-full px-4 py-3 rounded-lg bg-white border border-gray-200 focus:border-brand-accent-orange outline-none text-sm md:text-base" placeholder="Ej: Cemento Sol, Fierro..." />
+            </div>
+            <div>
+              <label htmlFor="mensajePage" className="block text-xs md:text-sm font-bold text-brand-dark mb-2">Mensaje Adicional</label>
+              <textarea id="mensajePage" rows={3} className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brand-primary outline-none resize-none text-sm md:text-base" placeholder="Detalles adicionales..." />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 pt-2">
+              <button type="submit" className="bg-[#25D366] text-white font-bold py-3 md:py-4 rounded-xl transition flex items-center justify-center gap-2 active:scale-95 text-sm md:text-base">
+                <FaWhatsapp className="text-xl" /> WhatsApp
               </button>
-              <button
-                type="button"
-                onClick={handleSendEmail}
-                className="bg-brand-dark hover:bg-brand-primary text-white font-bold py-4 rounded-lg transition shadow-xl flex items-center justify-center gap-2 transform active:scale-95"
-              >
-                <FaEnvelope className="text-xl" /> Enviar por Correo
+              <button type="button" onClick={handleSendEmail} className="bg-brand-dark text-white font-bold py-3 md:py-4 rounded-xl transition flex items-center justify-center gap-2 active:scale-95 text-sm md:text-base">
+                <FaEnvelope className="text-xl" /> Correo
               </button>
             </div>
           </form>
         </div>
       </div>
 
-      <div
-        id="ubicacion"
-        className={`tab-content p-8 md:p-12 ${activeTab === "ubicacion" ? "active" : ""}`}
-      >
-        <div className="mb-8 text-center">
-          <h3 className="text-2xl font-bold text-brand-dark mb-3">
-            Nuestras Sedes
-          </h3>
-          <p className="text-brand-grey">
-            Ubícanos en cualquiera de nuestras 3 ubicaciones en Lima
-          </p>
-        </div>
-
-        <div className="space-y-8">
+      {/* CONTENIDO UBICACIÓN */}
+      <div className={`p-4 md:p-12 ${activeTab === "ubicacion" ? "block" : "hidden"}`}>
+        <div className="grid grid-cols-1 gap-6 md:gap-8">
           {sedes.map((sede) => (
-            <div
-              key={sede.nombre}
-              className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-lg"
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-8">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div
-                      className={`bg-${sede.color} text-white w-10 h-10 rounded-full flex items-center justify-center font-bold`}
-                      style={
-                        sede.color === "brand-primary"
-                          ? { backgroundColor: "var(--brand-primary)" }
-                          : sede.color === "brand-accent-orange"
-                            ? { backgroundColor: "var(--brand-accent-orange)" }
-                            : { backgroundColor: "var(--brand-accent-yellow)", color: "#4B4445" }
-                      }
-                    >
+            <div key={sede.nombre} className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-md">
+              <div className="flex flex-col md:grid md:grid-cols-2">
+                {/* Info Sede */}
+                <div className="p-6 md:p-8">
+                  <div className="flex items-center gap-3 mb-4 md:mb-6">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-bold text-white shrink-0" 
+                         style={{ backgroundColor: sede.num === 3 ? "var(--brand-accent-yellow)" : `var(--${sede.color})`, color: sede.num === 3 ? "#4B4445" : "white" }}>
                       {sede.num}
                     </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-brand-dark flex items-center gap-2">
-                        {sede.nombre}
-                        {sede.num === 1 && (
-                          <span className="text-xs font-semibold bg-brand-primary text-white px-2 py-0.5 rounded-full uppercase tracking-wide">
-                            Sede principal
-                          </span>
-                        )}
-                      </h4>
-                    </div>
+                    <h4 className="text-lg md:text-xl font-bold text-brand-dark">{sede.nombre}</h4>
                   </div>
-                  <div className="space-y-4">
+                  <div className="space-y-3 md:space-y-4">
                     <div className="flex items-start gap-3">
-                      <FaLocationDot
-                        className="text-xl mt-1 flex-shrink-0"
-                        style={{
-                          color:
-                            sede.color === "brand-primary"
-                              ? "var(--brand-primary)"
-                              : sede.color === "brand-accent-orange"
-                                ? "var(--brand-accent-orange)"
-                                : "var(--brand-accent-yellow)",
-                        }}
-                      />
-                      <div>
-                        <p className="font-bold text-brand-dark">Dirección</p>
-                        <p className="text-brand-grey whitespace-pre-line">
-                          {sede.direccion}
-                        </p>
-                      </div>
+                      <FaLocationDot className="text-brand-primary mt-1 shrink-0" />
+                      <p className="text-sm md:text-base text-brand-grey whitespace-pre-line">{sede.direccion}</p>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <FaPhone
-                        className="text-xl mt-1 flex-shrink-0"
-                        style={{
-                          color:
-                            sede.color === "brand-primary"
-                              ? "var(--brand-primary)"
-                              : sede.color === "brand-accent-orange"
-                                ? "var(--brand-accent-orange)"
-                                : "var(--brand-accent-yellow)",
-                        }}
-                      />
-                      <div>
-                        <p className="font-bold text-brand-dark">Celular</p>
-                        <p className="text-brand-grey font-bold">
-                          {sede.telefono}
-                        </p>
-                      </div>
+                    <div className="flex items-center gap-3">
+                      <FaPhone className="text-brand-primary shrink-0" />
+                      <p className="text-sm md:text-base font-bold text-brand-dark">{sede.telefono}</p>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <FaClock
-                        className="text-xl mt-1 flex-shrink-0"
-                        style={{
-                          color:
-                            sede.color === "brand-primary"
-                              ? "var(--brand-primary)"
-                              : sede.color === "brand-accent-orange"
-                                ? "var(--brand-accent-orange)"
-                                : "var(--brand-accent-yellow)",
-                        }}
-                      />
-                      <div>
-                        <p className="font-bold text-brand-dark">Horario</p>
-                        <p className="text-brand-grey text-sm whitespace-pre-line">
-                          {sede.horario}
-                        </p>
-                      </div>
+                    <div className="flex items-center gap-3">
+                      <FaClock className="text-brand-primary shrink-0" />
+                      <p className="text-xs md:text-sm text-brand-grey">{sede.horario}</p>
                     </div>
                   </div>
                 </div>
-                <div className="bg-gray-200 h-80 md:h-auto relative group min-h-[320px]">
-                  <iframe
-                    src={sede.mapUrl}
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    className="absolute inset-0 w-full h-full grayscale group-hover:grayscale-0 transition duration-700"
-                    title={`Mapa ${sede.nombre}`}
-                  />
-                  <div className="absolute bottom-4 left-4 bg-white px-3 py-2 rounded-lg shadow-lg text-xs font-bold">
-                    <FaMapPin
-                      className="inline mr-1"
-                      style={{
-                        color:
-                          sede.color === "brand-primary"
-                            ? "var(--brand-primary)"
-                            : sede.color === "brand-accent-orange"
-                              ? "var(--brand-accent-orange)"
-                              : "var(--brand-accent-yellow)",
-                      }}
-                    />{" "}
-                    {sede.pinLabel}
-                  </div>
+                {/* Mapa */}
+                <div className="h-[250px] md:h-full min-h-[250px] bg-gray-100 relative">
+                  <iframe src={sede.mapUrl} width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" className="grayscale hover:grayscale-0 transition-all duration-500" />
                 </div>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-8 bg-brand-primary/10 p-4 rounded-lg border border-brand-primary/20 text-center">
-          <p className="text-brand-dark text-sm font-medium flex items-center justify-center gap-2 flex-wrap">
-            <FaWhatsapp className="text-brand-primary text-2xl" />
-            ¿Tienes dudas? Contáctanos por WhatsApp:{" "}
-            <span className="font-bold ml-2">+51 999 888 777</span>
-          </p>
         </div>
       </div>
     </div>

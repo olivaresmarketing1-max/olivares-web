@@ -152,9 +152,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <a
-                      href="https://wa.me/51999888777"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="/contacto"
                       className="inline-flex items-center gap-3 bg-brand-dark text-white px-8 py-4 rounded-lg font-bold hover:bg-brand-accent-orange transition shadow-md"
                     >
                       <FaWhatsapp className="text-2xl text-brand-primary" />{" "}
