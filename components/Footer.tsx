@@ -7,22 +7,23 @@ export default function Footer() {
     <footer className="bg-gray-900 text-white pt-16 pb-8 border-t border-gray-800">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
         <div className="md:col-span-2">
-          <Link href="/" className="flex items-center gap-3 mb-6">
+
+          {/* Logo del Footer con fondo blanco estilizado */}
+          <Link href="/" className="inline-block mb-6 bg-white p-3 rounded-xl shadow-md hover:bg-gray-50 transition-colors">
             <Image
-              src="/isotipo.png"
+              src="/logo.png"
               alt="Olivares"
-              width={40}
-              height={40}
-              className="h-10 w-10 object-contain"
+              width={400}
+              height={120}
+              className="h-16 w-auto md:h-24 object-contain"
             />
-            <span className="text-2xl font-extrabold tracking-tight">
-              GRUPO OLIVARES
-            </span>
           </Link>
+
           <p className="text-gray-300 mb-6 max-w-md">
             Más que una ferretería, somos tu socio estratégico en cada proyecto.
             Calidad, garantía y atención experta para profesionales y el hogar.
           </p>
+
           <div className="flex gap-4">
             <a
               href="#"

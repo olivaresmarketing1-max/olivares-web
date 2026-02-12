@@ -3,16 +3,21 @@ import Image from "next/image";
 import { FaBox, FaCubes, FaBarsStaggered, FaWhatsapp } from "react-icons/fa6";
 
 const cementoMarcas = [
-  "sol.jpeg"
+  "sol.jpeg",
+  "andino.jpeg",
+  "apu.jpeg",
 ];
 
 const ladrilloMarcas = [
   "lark.jpeg", 
-  "fortes.jpeg"
+  "fortes.jpeg",
+  "fortaleza.jpeg",
 ];
 
 const fierroMarcas = [
-  "siderperu.jpeg"
+  "siderperu.jpeg",
+  "aceros-arequipa.jpeg",
+  "rotoplast.jpeg"
 ];
 
 const alambresMarcas = [

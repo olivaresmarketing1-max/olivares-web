@@ -13,7 +13,7 @@ import {
   FaMapPin,
 } from "react-icons/fa6";
 
-const WHATSAPP_NUMBER = "51999888777";
+const WHATSAPP_NUMBER = "51933 542 681";
 const EMAIL = "info@grupoolivares.com";
 
 const sedes = [

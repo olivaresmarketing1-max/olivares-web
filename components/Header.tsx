@@ -24,23 +24,16 @@ export default function Header() {
   return (
     <header className="bg-brand-off-white text-brand-dark sticky top-0 z-50 shadow-lg border-b-4 border-brand-primary">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group z-50" onClick={closeMenu}>
+        {/* Logo - Solo Imagen */}
+        <Link href="/" className="z-50 flex items-center" onClick={closeMenu}>
           <Image
-            src="/isotipo.png"
+            src="/logo.png"
             alt="Olivares"
-            width={48}
-            height={48}
-            className="h-10 w-10 md:h-12 md:w-12 object-contain"
+            width={400} // Aumentamos para evitar pixelado
+            height={120}
+            className="h-16 w-auto md:h-24 object-contain transition-all" // h-16 en móvil, h-24 en desktop
+            priority
           />
-          <div>
-            <h1 className="text-xl md:text-2xl font-extrabold leading-none tracking-tight text-brand-dark">
-              OLIVARES
-            </h1>
-            <span className="text-[10px] md:text-sm text-brand-primary font-bold tracking-[0.2em] uppercase">
-              Grupo Olivares
-            </span>
-          </div>
         </Link>
 
         {/* Desktop Navigation */}
@@ -75,9 +68,8 @@ export default function Header() {
 
         {/* Mobile Menu Overlay */}
         <div
-          className={`fixed inset-0 bg-brand-off-white transform ${
-            isOpen ? "translate-x-0" : "translate-x-full"
-          } transition-transform duration-300 ease-in-out lg:hidden z-40 flex flex-col items-center justify-center gap-8`}
+          className={`fixed inset-0 bg-brand-off-white transform ${isOpen ? "translate-x-0" : "translate-x-full"
+            } transition-transform duration-300 ease-in-out lg:hidden z-40 flex flex-col items-center justify-center gap-8`}
         >
           {navItems.map(({ href, label }) => {
             const isActive = pathname === href;
@@ -86,9 +78,8 @@ export default function Header() {
                 key={href}
                 href={href}
                 onClick={closeMenu}
-                className={`text-2xl font-bold uppercase tracking-widest ${
-                  isActive ? "text-brand-primary" : "text-brand-dark"
-                }`}
+                className={`text-2xl font-bold uppercase tracking-widest ${isActive ? "text-brand-primary" : "text-brand-dark"
+                  }`}
               >
                 {label}
               </Link>
