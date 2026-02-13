@@ -7,7 +7,7 @@ import {
   FaScrewdriverWrench,
   FaArrowRight,
   FaWhatsapp,
-  FaBath
+  FaBath,
 } from "react-icons/fa6";
 import HeroCarousel from "@/components/HeroCarousel";
 
@@ -75,22 +75,32 @@ export default function HomePage() {
             </h3>
             <div className="w-24 h-1.5 bg-brand-primary mx-auto mt-4 rounded-full" />
           </div>
-          
+
           {/* CAMBIO CLAVE: 
               'md:grid-cols-5' asegura que las 5 categorías estén en una sola línea.
               'grid-cols-2' mantiene 2 columnas en móviles.
           */}
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-            {categories.map(({ icon: Icon, label, href }) => (
-              <Link key={label} href={href} className="group text-center">
-                <div className="bg-brand-light w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-primary transition duration-300 shadow-sm group-hover:shadow-md group-hover:-translate-y-2 border-2 border-transparent group-hover:border-brand-primary-dark/20">
-                  <Icon className="text-4xl md:text-5xl text-brand-primary group-hover:text-white transition" />
-                </div>
-                <h4 className="font-bold text-brand-dark group-hover:text-brand-primary transition text-sm md:text-base">
-                  {label}
-                </h4>
-              </Link>
-            ))}
+          <div className="relative">
+            {/* CONTENEDOR RESPONSIVE:
+    - Mobile: Flexbox con scroll horizontal (snap-x)
+    - Desktop (md): Grid de 5 columnas (o las que prefieras)
+  */}
+            <div className="flex md:grid md:grid-cols-5 gap-6 overflow-x-auto md:overflow-visible pb-4 md:pb-0 snap-x scrollbar-hide">
+              {categories.map(({ icon: Icon, label, href }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  className="group text-center min-w-[120px] md:min-w-0 snap-center"
+                >
+                  <div className="bg-brand-light w-20 h-20 md:w-24 md:h-24 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-primary transition duration-300 shadow-sm group-hover:shadow-md group-hover:-translate-y-2 border-2 border-transparent group-hover:border-brand-primary-dark/20">
+                    <Icon className="text-3xl md:text-5xl text-brand-primary group-hover:text-white transition" />
+                  </div>
+                  <h4 className="font-bold text-brand-dark group-hover:text-brand-primary transition text-xs md:text-base leading-tight px-2">
+                    {label}
+                  </h4>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
