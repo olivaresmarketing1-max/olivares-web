@@ -39,7 +39,7 @@ export default function CatalogoPage() {
 
             <div className="space-y-4">
               <a
-                href="/catalogo-2026.pdf"
+                href="/Catalogo-2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full bg-brand-primary hover:bg-green-700 text-white py-5 px-8 rounded-xl font-bold text-xl shadow-lg shadow-green-900/20 transition transform hover:-translate-y-1 flex items-center justify-center gap-3"
