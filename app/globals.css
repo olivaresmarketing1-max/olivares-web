@@ -5,8 +5,8 @@
   --background: #ffffff;
   --foreground: #4B4445;
   /* Brand Olivares */
-  --brand-primary: #5B9739;
-  --brand-primary-dark: #4B7D30;
+  --brand-primary: #008930;
+  --brand-primary-dark: #006B25;
   --brand-dark: #4B4445;
   --brand-grey: #747074;
   --brand-accent-orange: #CF7243;
@@ -19,8 +19,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: 'Inter', sans-serif;
-  --color-brand-primary: #5B9739;
-  --color-brand-primary-dark: #4B7D30;
+  --color-brand-primary: #008930;
+  --color-brand-primary-dark: #006B25;
   --color-brand-dark: #4B4445;
   --color-brand-grey: #747074;
   --color-brand-accent-orange: #CF7243;

@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Logo del Footer con fondo blanco estilizado */}
           <Link href="/" className="inline-block mb-6 bg-white p-3 rounded-xl shadow-md hover:bg-gray-50 transition-colors">
             <Image
-              src="/logo.png"
+              src="/logo-original.png"
               alt="Olivares"
               width={400}
               height={120}

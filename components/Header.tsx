@@ -27,7 +27,7 @@ export default function Header() {
         {/* Logo - Solo Imagen */}
         <Link href="/" className="z-50 flex items-center" onClick={closeMenu}>
           <Image
-            src="/logo.png"
+            src="/logo-original.png"
             alt="Olivares"
             width={400} // Aumentamos para evitar pixelado
             height={120}

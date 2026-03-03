@@ -1,4 +1,5 @@
-import { FaFilePdf, FaLock, FaScrewdriverWrench } from "react-icons/fa6";
+import Image from "next/image";
+import { FaFilePdf, FaLock } from "react-icons/fa6";
 
 export const metadata = {
   title: "Catálogo 2026 - Grupo Olivares",
@@ -15,28 +16,14 @@ export default function CatalogoPage() {
         <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 max-w-5xl mx-auto border border-gray-100 flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/2 relative group">
             <div className="absolute inset-0 bg-brand-dark rounded-xl transform translate-x-3 translate-y-3 group-hover:translate-x-5 group-hover:translate-y-5 transition duration-500" />
-            <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl aspect-[3/4] flex flex-col justify-between p-8 text-white shadow-xl overflow-hidden border border-gray-700">
-              <div className="absolute top-0 right-0 p-4 opacity-10">
-                <FaScrewdriverWrench className="text-9xl" />
-              </div>
-              <div className="relative z-10">
-                <span className="bg-brand-primary px-3 py-1 text-xs font-bold uppercase tracking-widest rounded mb-4 inline-block">
-                  Edición 2026
-                </span>
-                <h3 className="text-4xl font-extrabold leading-tight">
-                  CATÁLOGO
-                  <br />
-                  GENERAL
-                </h3>
-              </div>
-              <div className="relative z-10 border-t border-gray-600 pt-6">
-                <p className="text-sm text-gray-400 uppercase tracking-widest mb-1">
-                  Grupo Olivares
-                </p>
-                <p className="text-xs text-gray-500">
-                  Materiales • Herramientas • Industria
-                </p>
-              </div>
+            <div className="relative rounded-xl aspect-[3/4] overflow-hidden shadow-xl border border-gray-700">
+              <Image
+                src="/portada.jpeg"
+                alt="Portada del Catálogo 2026 - Grupo Olivares"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
           </div>
 
@@ -52,10 +39,10 @@ export default function CatalogoPage() {
 
             <div className="space-y-4">
               <a
-                href="/catalogo.pdf"
+                href="/catalogo-2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full bg-brand-accent-orange hover:bg-orange-700 text-white py-5 px-8 rounded-xl font-bold text-xl shadow-lg shadow-orange-900/20 transition transform hover:-translate-y-1 flex items-center justify-center gap-3"
+                className="block w-full bg-brand-primary hover:bg-green-700 text-white py-5 px-8 rounded-xl font-bold text-xl shadow-lg shadow-green-900/20 transition transform hover:-translate-y-1 flex items-center justify-center gap-3"
               >
                 <FaFilePdf className="text-3xl" />
                 <div>

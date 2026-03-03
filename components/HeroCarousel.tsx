@@ -48,8 +48,8 @@ export default function HeroCarousel() {
 
   return (
     <section className="relative w-full overflow-hidden bg-gray-100">
-      {/* Altura del banner - Ajustable según necesidad */}
-      <div className="carousel-container relative h-[300px] md:h-[500px] lg:h-[600px]">
+      {/* Contenedor con aspect-ratio 16:9 para mantener la proporción de las imágenes 1600x900 */}
+      <div className="carousel-container relative w-full aspect-[16/9]">
         {slides.map((slide, index) => (
           <div
             key={index}
@@ -64,7 +64,7 @@ export default function HeroCarousel() {
                 alt={slide.alt}
                 fill
                 priority={index === 0} // Prioridad de carga para la primera imagen
-                className="object-cover" // Asegura que la imagen cubra todo el espacio sin deformarse
+                className="object-contain" // Muestra toda la imagen sin recortar
                 sizes="100vw"
                 unoptimized
               />
@@ -103,8 +103,8 @@ export default function HeroCarousel() {
               onClick={() => show(i)}
               className={`w-3 h-3 rounded-full transition-all duration-300 shadow-sm ${
                 i === current 
-                  ? "bg-white scale-110" 
-                  : "bg-white/50 hover:bg-white/80"
+                  ? "bg-gray-700 scale-110" 
+                  : "bg-gray-500/50 hover:bg-gray-700/80"
               }`}
               aria-label={`Ir a banner ${i + 1}`}
             />
