@@ -30,7 +30,7 @@ const sedes = [
     direccion: "Av. Santa Rosa de Lima 652\nSan Juan de Lurigancho, Lima",
     telefono: "933 542 681",
     // Enlace externo (Botón de texto)
-    mapUrl: "https://maps.app.goo.gl/genericLink1",
+    mapUrl: "https://maps.app.goo.gl/DXLKvTAjEgJrjBp68",
     // Enlace para el mapa incrustado (Iframe)
     embedSrc:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.593741639836!2d-77.00947082568652!3d-11.968132938562366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c561b3658511%3A0x6338421008061404!2sAv.%20Santa%20Rosa%20de%20Lima%20652%2C%20San%20Juan%20de%20Lurigancho%2015419!5e0!3m2!1ses-419!2spe!4v1707920000000!5m2!1ses-419!2spe",
@@ -43,7 +43,7 @@ const sedes = [
     direccion:
       "Anexo 22 Jicamarca Mz AW Lt 06\nAsc. de Pob. El Cercado - Huarochiri San Antonio",
     telefono: "977 928 236",
-    mapUrl: "https://maps.app.goo.gl/genericLink2",
+    mapUrl: "https://maps.app.goo.gl/yedVNjaHaHSpRw8T8",
     embedSrc:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.454278453582!2d-76.9935105!3d-11.9065112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c3d2296495cb%3A0x280d8531185489f6!2sJicamarca!5e0!3m2!1ses-419!2spe!4v1707920000000!5m2!1ses-419!2spe",
     pinLabel: "Jicamarca",
@@ -55,7 +55,7 @@ const sedes = [
     direccion:
       "Av. Héroes de Cénepa Mz B17 lote 15\nUrb. Mariscal Andres Avelino C., San Juan de Lurigancho",
     telefono: "955 035 898",
-    mapUrl: "https://maps.app.goo.gl/genericLink3",
+    mapUrl: "https://maps.app.goo.gl/qGHFHzxEPGYnozTz7",
     embedSrc:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.663188546513!2d-76.9926884!3d-11.9631586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5576564619d%3A0x10da5625463f61!2sAv.%20Heroes%20del%20Cenepa%2C%20San%20Juan%20de%20Lurigancho!5e0!3m2!1ses-419!2spe!4v1707920000000!5m2!1ses-419!2spe",
     pinLabel: "Héroes de Cénepa",
