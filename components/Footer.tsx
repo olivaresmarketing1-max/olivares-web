@@ -26,21 +26,27 @@ export default function Footer() {
 
           <div className="flex gap-4">
             <a
-              href="#"
+              href="https://www.facebook.com/share/176dogc7cj/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-gray-300 hover:bg-brand-primary hover:text-white transition"
               aria-label="Facebook"
             >
               <FaFacebookF />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/grupoolivaresoficial?igsh=MWtnamYyOHJmZTh1bA=="
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-gray-300 hover:bg-brand-primary hover:text-white transition"
               aria-label="Instagram"
             >
               <FaInstagram />
             </a>
             <a
-              href="#"
+              href="https://www.tiktok.com/@grupoolivares.peru?_r=1&_t=ZS-94Y0mr8TrPw"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-gray-300 hover:bg-brand-primary hover:text-white transition"
               aria-label="TikTok"
             >

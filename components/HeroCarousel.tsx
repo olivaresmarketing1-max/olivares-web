@@ -19,6 +19,11 @@ const slides = [
     href: "/marcas",
     alt: "Materiales de industria",
   },
+  {
+    image:"/imagenes-olivares/banner-3.jpeg",
+    href: "/contacto",
+    alt: "Rapidez y eficiencia en entregas",
+  }
 ];
 
 export default function HeroCarousel() {
