@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   FaBuilding,
   FaCertificate,
@@ -29,24 +30,28 @@ const timeline = [
     title: "El Inicio del Sueño",
     text: "Segundo Santa Cruz y Regina Olivares inician su camino como ambulantes en la Av. Montevideo. Su premisa era simple: calidad y marca.",
     icon: FaStar,
+    image: "/historia/imagen-1.jpeg",
   },
   {
     year: "1995",
     title: "Primera Ferretería",
     text: "Transformaron parte de su hogar en la primera ferretería familiar en SJL. Un compromiso real con una comunidad en expansión.",
     icon: FaHouse,
+    image: "/historia/imagen-2.jpeg",
   },
   {
     year: "2014",
     title: "Distribuidores Estratégicos",
     text: "Damos el gran salto siendo distribuidores de UNACEM, ACEROS AREQUIPA y SIDERPERU. La segunda generación asume el liderazgo.",
     icon: FaHandshake,
+    image: "/historia/imagen-3.jpeg",
   },
   {
     year: "2024",
     title: "Nace Grupo Olivares",
     text: "Renovamos nuestra identidad bajo el nombre GRUPO OLIVARES, reafirmando nuestro legado y proyección a futuro.",
     icon: FaRocket,
+    image: "/historia/imagen-4.jpeg",
   },
 ];
 
@@ -169,24 +174,36 @@ export default function NosotrosPage() {
             <h2 className="text-3xl font-extrabold text-brand-dark">Nuestra Historia</h2>
             <div className="w-20 h-1.5 bg-brand-primary mx-auto mt-4 rounded-full" />
           </div>
-          <div className="max-w-4xl mx-auto relative">
-            {/* Line - Hidden on very small mobile if needed, but here kept responsive */}
+          <div className="max-w-6xl mx-auto relative">
+            {/* Line */}
             <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-300 md:-translate-x-1/2" />
             
             {timeline.map((item, i) => (
-              <div key={item.year} className={`relative mb-12 flex flex-col md:flex-row items-center w-full ${i % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
+              <div key={item.year} className={`relative mb-20 flex flex-col md:flex-row items-center w-full ${i % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
                 {/* Contenido */}
-                <div className="w-full md:w-5/12 pl-16 md:pl-0 md:px-8">
+                <div className="w-full md:w-5/12 pl-16 md:pl-0 md:px-10">
                   <div className={`${i % 2 === 0 ? "md:text-left" : "md:text-right"}`}>
-                    <span className="text-3xl md:text-4xl font-black text-brand-primary/20 block mb-1">{item.year}</span>
-                    <h3 className="text-xl font-bold text-brand-dark mb-2">{item.title}</h3>
-                    <p className="text-brand-grey text-sm md:text-base leading-relaxed">{item.text}</p>
+                    <span className="text-4xl md:text-6xl font-black text-brand-primary/20 block mb-1">{item.year}</span>
+                    <h3 className="text-2xl font-bold text-brand-dark mb-3">{item.title}</h3>
+                    <p className="text-brand-grey text-base md:text-lg leading-relaxed">{item.text}</p>
                   </div>
                 </div>
                 {/* Icono Central */}
-                <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 flex justify-center w-12 h-12">
-                  <div className={`w-10 h-10 md:w-12 md:h-12 flex items-center justify-center border-4 border-white shadow-md rounded-full z-10 ${i === timeline.length - 1 ? "bg-brand-primary text-white animate-pulse" : "bg-brand-dark text-white"}`}>
-                    <item.icon className="text-sm md:text-base" />
+                <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 flex justify-center w-14 h-14">
+                  <div className={`w-12 h-12 md:w-14 md:h-14 flex items-center justify-center border-4 border-white shadow-md rounded-full z-10 ${i === timeline.length - 1 ? "bg-brand-primary text-white animate-pulse" : "bg-brand-dark text-white"}`}>
+                    <item.icon className="text-base md:text-lg" />
+                  </div>
+                </div>
+                {/* Imagen */}
+                <div className="hidden md:flex w-5/12 px-10 justify-center">
+                  <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border-2 border-brand-primary/10">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 0px, 45vw"
+                    />
                   </div>
                 </div>
               </div>
